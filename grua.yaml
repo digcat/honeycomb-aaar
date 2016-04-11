@@ -1,0 +1,19 @@
+global:
+  project: alf
+  volumepath: /var/lib/grua/volumes
+pentaho:
+  build: pentaho
+  tag: alf/pentaho
+  options:
+    - "--expose=8080"
+    - "--hostname=pentaho.weave.local"
+    - "--env INSTALL_PLUGIN=marketplace,cdf,cda,cde,cgg,sparkl,saiku,pivot4j,aaar"
+    - "--env RDS_PORT=5432"
+    - "--env RDS_DB_NAME=postgres"   
+    - "--env RDS_USERNAME=postgres"
+    - "--env RDS_HOSTNAME=10.99.0.10"
+    - "--env RDS_PASSWORD=d33pblu3"
+    - "--env DB_VENDOR=postgres" 
+  ports:
+    - "8080:8080"
+

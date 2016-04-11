@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories>
+  <connection>
+    <name>AAAR_Kettle</name>
+    <type>PostgreSql</type>
+    <access>JNDI</access>
+    <database>AAAR_Kettle</database>
+  </connection>
+  <repository>
+    <id>KettleDatabaseRepository</id>
+    <name>AAAR_Kettle</name>
+    <description>AAAR_Kettle</description>
+    <connection>AAAR_Kettle</connection>
+  </repository>
+</repositories>

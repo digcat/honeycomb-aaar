@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+<appender name="FILE" class="org.apache.log4j.FileAppender">
+<param name="File" value="log4j.log" />
+<param name="Append" value="true" />
+<layout class="org.apache.log4j.PatternLayout">
+<param name="ConversionPattern" value="%t %-5p %c{2} - %m%n"/>
+</layout> 
+</appender>
+
+<root>
+<priority value="INFO"/>
+<appender-ref ref="FILE"/>
+</root>
+
+<category name="org.pentaho">
+<priority value="WARN"/>
+</category>
+
+<!-- example to look at the logs of some underlying libraries from a custom step or plugin -->
+
+<category name="org.apache.commons.httpclient">
+<priority value="DEBUG"/>
+</category>
+<category name="org.apache.chemistry.opencmis">
+<priority value="DEBUG"/>
+</category>
+
+</log4j:configuration>
