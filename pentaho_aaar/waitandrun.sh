@@ -6,5 +6,5 @@ while [ -f $FILE ]; do
      ./runscan.sh
      echo "Sleeping for an hour....\n"
      date
-     sleep 3600
+     sleep 100
 done

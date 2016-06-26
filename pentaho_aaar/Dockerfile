@@ -9,7 +9,7 @@ ENV BISERVER_TAG 6.0.1.0-386
 ENV TAPA_VERSION 0.3.1
 ENV SAIKU_VERSION 6-3.7
 ENV PIVOT4J_VERSION 1.0-SNAPSHOT 
-ENV AAAR_VERSION 4.2
+ENV AAAR_VERSION 4.3
 
 ENV PENTAHO_HOME /opt/pentaho
 
@@ -67,10 +67,10 @@ RUN  chown pentaho:pentaho $PENTAHO_HOME/biserver-ce/pentaho-solutions/system/pe
 USER pentaho
 COPY files/config $PENTAHO_HOME/config
 COPY files/scripts $PENTAHO_HOME/scripts
-COPY files/addons/AAAR_v4.2.zip /tmp/AAAR_v4.2.zip
+COPY files/addons/AAAR_v4.3.zip /tmp/AAAR_v4.3.zip
 COPY files/log4j.xml /opt/data-integration/system/log4j.xml
 COPY files/repositories.xml /opt/pentaho/repositories.xml
-RUN  /usr/bin/unzip -q /tmp/AAAR_v4.2.zip -d $PENTAHO_HOME/biserver-ce/pentaho-solutions/system
+RUN  /usr/bin/unzip -q /tmp/AAAR_v4.3.zip -d $PENTAHO_HOME/biserver-ce/pentaho-solutions/system
 COPY files/addons/saiku-olap-util-3.7-SNAPSHOT.jar $PENTAHO_HOME/biserver-ce/tomcat/webapps/pentaho/WEB-INF/lib/saiku-olap-util-3.7-SNAPSHOT.jar
 RUN mkdir /opt/logs
 RUN chmod +x $PENTAHO_HOME/biserver-ce/pentaho-solutions/system/AAAR/endpoints/kettle/script/AAAR_*.sh
